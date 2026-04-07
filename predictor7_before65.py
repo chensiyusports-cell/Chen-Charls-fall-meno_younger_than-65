@@ -9,7 +9,7 @@ from lime.lime_tabular import LimeTabularExplainer
 import warnings
 
 warnings.filterwarnings("ignore")
-
+st.set_page_config(layout="wide")
 # ==================== 1. 基础配置 ====================
 # 加载训练好的随机森林模型（确保 RF.pkl 与脚本同目录）
 model = joblib.load("xgb_model.pkl")
@@ -37,8 +37,8 @@ feature_names = [
 
 # ==================== 2. Streamlit 页面配置 ====================
 st.set_page_config(page_title="Fall Risk Prediction", layout="wide")
-st.title("Fall risk prediction of Chinese post-menopausal women aged < 65")
-st.markdown("Please fill the following blank to predict")
+st.title("Fall Risk Prediction Model for Chinese Postmenopausal Women aged > 65")
+st.markdown("Please complete the following information to obtain an individualized fall risk estimate.")
 
 # ==================== 3. 特征输入组件（按编码规则设计） ====================
 time_5_sts = st.number_input(
